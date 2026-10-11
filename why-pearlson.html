@@ -355,9 +355,40 @@
 
     /* Architecture Q&A */
     .why-qna { margin-top: 64px; }
-    .why-qna .acc { max-width: 900px; margin: 32px 0 0; }
-    .why-qna .acc-content p { margin-bottom: 12px; }
-    .why-qna .acc-content p:last-child { margin-bottom: 0; }
+    .qna-card {
+      background: #fff; border: 1px solid #eef0f5; border-radius: 14px;
+      padding: 32px 36px; margin-top: 28px; box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+    }
+    .qna-card .qna-q {
+      font-size: 1.25rem; font-weight: 700; color: #0a3d62; margin-bottom: 16px;
+      padding-bottom: 14px; border-bottom: 2px solid #f39c12;
+      display: flex; align-items: flex-start; gap: 12px;
+    }
+    .qna-card .qna-q .qnum {
+      flex: 0 0 auto; background: #0a3d62; color: #f39c12; font-size: 1rem;
+      width: 34px; height: 34px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; font-weight: 800;
+    }
+    .qna-card .qna-a p { margin-bottom: 12px; }
+    .qna-card .qna-a p:last-child { margin-bottom: 0; }
+    .qna-card .qna-a strong { color: #0a3d62; }
+    .why-qna .compare-wrap { margin-top: 32px; }
+    .qna-rebuttal {
+      background: #fdf6ee; border-left: 4px solid #e67e22; border-radius: 12px;
+      padding: 28px 32px; margin-top: 32px;
+    }
+    .qna-rebuttal h4 { font-size: 1.05rem; font-weight: 700; color: #0a3d62; margin-bottom: 12px; }
+    .qna-rebuttal p { font-size: 0.95rem; color: #555; margin-bottom: 12px; line-height: 1.7; }
+    .qna-rebuttal p:last-child { margin-bottom: 0; }
+    .qna-rebuttal .ribbon {
+      display: inline-block; background: #e67e22; color: #fff; font-size: 0.72rem;
+      font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+      padding: 4px 12px; border-radius: 20px; margin-bottom: 14px;
+    }
+    @media (max-width: 768px) {
+      .qna-card { padding: 24px 20px; }
+      .qna-rebuttal { padding: 22px 20px; }
+    }
     @media (max-width: 768px) {
       .why-kicker { grid-template-columns: 1fr; gap: 12px; }
       .why-kicker .kicker-num { font-size: 3rem; }
@@ -824,28 +855,85 @@
       <!-- ARCHITECTURE QUESTIONS -->
       <div class="why-qna">
         <span class="section-tag">The Engineering Questions</span>
-        <h3 style="font-size:1.5rem; font-weight:700; color:#0a3d62;">Two questions every owner asks us — answered</h3>
-        <p style="color:#666; margin-top:8px;">Every shiplift has to answer two design questions before a single drawing is issued. Here is how — and why — Pearlson answers them.</p>
+        <h3 style="font-size:1.5rem; font-weight:700; color:#0a3d62;">The two questions that separate Pearlson from the alternatives</h3>
+        <p style="color:#666; margin-top:8px;">Two design decisions — the platform type and the hoist motor — divide every shiplift on the market. Here is how Pearlson answers both, and why the answers hold up to any competitor's counter.</p>
 
-        <div class="acc">
-          <div class="acc-item">
-            <button class="acc-head" type="button">Why the combined (continuous-pinned) platform instead of a rigid platform?<span class="acc-ind">+</span></button>
-            <div class="acc-body"><div class="acc-content">
-              <p><strong>The short answer: geometry, not electronics, keeps the platform level.</strong></p>
-              <p>A rigid platform is statically indeterminate. As the vessel moves across it, the frame racks and pinches, load sharing between hoists shifts, and under worst-case concentrated loads some hoists can be driven into upward (negative) loading. That indeterminate behaviour is the real reason some system builders must add per-hoist power-electronics: the structure needs active control just to hold level.</p>
-              <p>Pearlson's combined system — wire-rope hoists and a continuous-pinned platform — is the opposite: statically determinate. The ropes pull through a geometry that gives every hoist its exact, predictable share; the platform always works in tension and never under indeterminate racking; worst-case loads are shared with no uplift; and if a rope were ever lost, the neighbouring hoists restrain the load by design.</p>
-              <p><strong>Level is a property of the system's geometry and load balance — not a running software achievement.</strong> That is why the combined system is the safer, simpler and more failure-tolerant base.</p>
-            </div></div>
+        <div class="qna-card">
+          <div class="qna-q"><span class="qnum">Q1</span><span>Why the combined (continuous-pinned) platform instead of a rigid one?</span></div>
+          <div class="qna-a">
+            <p><strong>The short answer: geometry, not electronics, keeps the platform level.</strong></p>
+            <p>A rigid platform is statically indeterminate. As the vessel moves across it, the frame racks and pinches, load sharing between hoists shifts, and under worst-case concentrated loads some hoists can be driven into upward (negative) loading. That indeterminate behaviour is exactly why those builders need heavy, expensive framing and per-hoist power-electronics — their structure must be actively controlled just to hold level.</p>
+            <p>Pearlson's combined system — wire-rope hoists and a continuous-pinned platform — is statically determinate. The ropes pull through a geometry that gives every hoist its exact, predictable share; the platform always works in tension, never under indeterminate racking; worst-case loads are shared with no uplift; and if a rope were ever lost, the neighbouring hoists restrain the load by design.</p>
+            <p><strong>Level is a property of the system's geometry and load balance — not a running software achievement.</strong> That is why the combined system is the safer, simpler and more failure-tolerant base, and why Pearlson has built it that way since 1957.</p>
           </div>
-          <div class="acc-item">
-            <button class="acc-head" type="button">Why synchronous motors instead of induction motors with VFDs?<span class="acc-ind">+</span></button>
-            <div class="acc-body"><div class="acc-content">
-              <p><strong>The short answer: on a Pearlson hoist, synchronization happens in physics — not in per-hoist electronics.</strong></p>
-              <p>Every Pearlson hoist uses a synchronous motor, and the choice is deliberate. A synchronous motor is locked to the grid frequency: every hoist on the bus runs at exactly the same speed, with zero slip, forever. An induction motor runs 1–5% slower than its supply and must instead be ordered to match by a variable-frequency drive per hoist — the drive brings harmonics, shielded cabling, a new maintenance speciality, and the job of actively managing the energy produced during lowering.</p>
-              <p>A Pearlson synchronous motor returns that lowering energy straight to the grid at synchronous speed, holds higher efficiency at the partial-load regime a shiplift actually operates in, feeds the yard a clean unity-or-leading power factor with no drive harmonics — and it does all of it on a service record that runs unbroken since the 1950s. Synchronous drives have been used in every Pearlson build to date, forming the basis of the systems accepted by NAVSEA/USCG and certified by Lloyd's Register.</p>
-              <p><strong>For steady, heavy, constant-speed shiplift duty, the synchronous machine isn't the conservative choice — it is the correct one.</strong></p>
-            </div></div>
+        </div>
+
+        <div class="qna-card">
+          <div class="qna-q"><span class="qnum">Q2</span><span>Why synchronous motors instead of induction motors with VFDs?</span></div>
+          <div class="qna-a">
+            <p><strong>The short answer: on a Pearlson hoist, synchronization happens in physics — not in per-hoist electronics.</strong></p>
+            <p>A synchronous motor is locked to the grid frequency: every hoist on the bus runs at exactly the same speed, with zero slip, forever. An induction motor runs 1–5% slower than its supply and must instead be ordered to match by a variable-frequency drive per hoist — and, tellingly, that drive is required partly to cope with the indeterminate behaviour of the platform it sits on.</p>
+            <p>The drive brings harmonics, shielded cabling, a new maintenance speciality, and the job of actively managing the energy produced during lowering. A Pearlson synchronous motor returns that lowering energy straight to the grid at synchronous speed, holds higher efficiency at the partial-load regime a shiplift actually operates in, and feeds the yard a clean unity-or-leading power factor with no drive harmonics.</p>
+            <p><strong>For steady, heavy, constant-speed shiplift duty, the synchronous machine isn't the conservative choice — it is the correct one.</strong> Synchronous drives have been used in every Pearlson build to date, forming the basis of the systems accepted by NAVSEA/USCG and certified by Lloyd's Register.</p>
           </div>
+        </div>
+
+        <div class="compare-wrap">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Consideration</th>
+                <th>Rigid platform + induction motors + VFDs</th>
+                <th>Pearlson combined platform + synchronous motors</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Platform physics</td>
+                <td>Indeterminate — racks, pinches and shifts sharing as load moves</td>
+                <td>Determinate — every hoist receives its exact share by geometry</td>
+              </tr>
+              <tr>
+                <td>Keeping the platform level</td>
+                <td>Actively, by per-hoist drives reacting to sensors</td>
+                <td>Passively, by physics — zero slip and correct load share</td>
+              </tr>
+              <tr>
+                <td>One hoist exceeds its limit</td>
+                <td>Electronics rebalance and keep lifting — load is transferred to neighbours</td>
+                <td>Deviations stay within design margins; an exception causes a safe stop and investigation</td>
+              </tr>
+              <tr>
+                <td>Loss of one hoist / rope</td>
+                <td>Reaction depends on drive control and its response time</td>
+                <td>Neighbours restrain the load by design — a deterministic, certifiable case</td>
+              </tr>
+              <tr>
+                <td>Impact on the vessel</td>
+                <td>Live re-distributed block reactions — a load path outside the vessel's docking design basis</td>
+                <td>Defined block loads at docking, as certified</td>
+              </tr>
+              <tr>
+                <td>Power quality</td>
+                <td>Harmonics, shielded cabling, drive maintenance, regeneration management</td>
+                <td>Line-fed; clean power factor; lowering energy returned to the grid</td>
+              </tr>
+              <tr>
+                <td>Certification basis</td>
+                <td>Complex, multi-vendor, software-dependent</td>
+                <td>NAVSEA/USCG accepted; Lloyd's Register certified; every build synchronous to date</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="qna-rebuttal">
+          <span class="ribbon">Their counter-argument, answered</span>
+          <h4>"Our drives redistribute load between hoists, so the lift doesn't stop when one hoist exceeds its limit."</h4>
+          <p><strong>Redistribution cannot reduce the total weight — it transfers it, and it does so by deflecting the platform.</strong> Load moved between distant hoists bends the structure and shifts the keel-block reactions and hull-girder bending on the vessel. The vessel is certified against defined block loads at docking; it was never designed for a live, control-chosen redistribution envelope. Unless the builder publishes a full structural demonstration — vessel, platform and keel blocks — for every redistribution state their system can command, that load path is simply unanalysed.</p>
+          <p><strong>The same one-hoist-out event is deterministic in a Pearlson system.</strong> The load path is fixed by statics, bounded, and certifiable in advance — neighbouring hoists take up the load by design, exactly as in a rope-loss case. Their system instead runs the structure into an unbounded set of runtime distributions.</p>
+          <p><strong>"Not stopping the lift" also hides the cause.</strong> If a hoist exceeds its limit, that is an event worth knowing about — mis-tension, a rope slip, a shifted block. In safety-critical docking you want the system to stop and flag the out-of-tolerance hoist so the dockmaster investigates, not silently rebalance under the hull.</p>
+          <p>The honest comparison: they spent more on material and complexity to automate an event that, in a Pearlson system, is a designed-for, certifiable condition from the start. Ask them for the load-distribution envelope and its structural proof. The burden of proof is theirs.</p>
         </div>
       </div>
 
