@@ -333,13 +333,25 @@
     #why-pearlson { background: #fff; }
     .why-lead { max-width: 720px; }
     .why-kicker {
-      display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center;
+      display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: start;
       margin-top: 48px;
     }
     .why-kicker .kicker-num {
-      font-size: 4rem; font-weight: 800; color: #f39c12; line-height: 1; white-space: nowrap;
+      font-size: 4rem; font-weight: 800; color: #f39c12; line-height: 1; white-space: nowrap; padding-top: 6px;
     }
     .why-kicker .kicker-text { font-size: 1.05rem; color: #555; line-height: 1.7; }
+    .inventor-profile {
+      display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: center;
+      background: #f2f2f4; border: 1px solid #e5e7eb; border-radius: 14px;
+      padding: 28px 32px; margin-top: 32px; max-width: 860px;
+    }
+    .inventor-profile img {
+      width: 160px; height: 200px; object-fit: cover; object-position: top center;
+      border-radius: 10px; border: 3px solid #fff; box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    }
+    .inventor-profile .inventor-name { font-size: 1.3rem; font-weight: 700; color: #0a3d62; margin-bottom: 4px; }
+    .inventor-profile .inventor-title { color: #b45309; font-size: 0.9rem; font-weight: 600; margin-bottom: 12px; }
+    .inventor-profile p { font-size: 0.95rem; color: #555; line-height: 1.7; margin: 0; }
     .why-stats {
       background: linear-gradient(135deg, #0a3d62 0%, #0d4f7a 100%);
       border-radius: 18px; padding: 48px 32px; margin-top: 56px;
@@ -357,7 +369,8 @@
     .compare-table tr:last-child td { border-bottom: none; }
     .compare-table td .yes { color: #1a8a5c; font-weight: 700; }
     .compare-table td .no { color: #c0392b; font-weight: 700; }
-    .why-note { font-size: 0.78rem; color: #999; margin-top: 12px; font-style: italic; }
+    .why-note { font-size: 0.78rem; color: #6b7280; margin-top: 12px; font-style: italic; }
+    .why-note a { color: #4b5563; }
     .evidence-library { margin-top: 72px; text-align: center; }
     .guide-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 40px; text-align: left; }
     .guide-card {
@@ -388,6 +401,9 @@
     @media (max-width: 768px) {
       .why-kicker { grid-template-columns: 1fr; gap: 12px; }
       .why-kicker .kicker-num { font-size: 3rem; }
+      .inventor-profile { grid-template-columns: 1fr; text-align: center; padding: 24px 20px; }
+      .inventor-profile img { margin: 0 auto; }
+      .inventor-profile p { text-align: left; }
       .why-stats { padding: 32px 24px; }
       .why-verdict { padding: 28px 24px; }
       .why-verdict ul { columns: 1; }
@@ -954,46 +970,58 @@
     <div class="container">
       <span class="section-tag">The Pearlson Advantage</span>
       <h2 class="section-title">Why Choose Pearlson?</h2>
-      <p class="section-sub">More than 280 Pearlson shiplifts are in service across over 70 countries, backed by nearly seven decades of accumulated engineering from the company that <strong>invented the technology</strong>. This page answers the question we hear most — why the world's most demanding shipyards, and all four of the world's largest shiplifts, choose Pearlson — explored in full depth below.</p>
+      <p class="section-sub">This page answers the question we hear most — why the world's most demanding shipyards choose Pearlson, the company that <strong>invented the technology</strong> — explored in full depth below.</p>
 
       <div class="why-kicker">
         <div class="kicker-num">1957</div>
-        <div class="kicker-text"><strong>More than 280 shiplifts in over 70 countries</strong> — and nearly seven decades of accumulated engineering behind every answer we give. It starts with the inventor: Raymond Pearlson designed, patented, and built the world's first shiplift in 1957, a system that lifted its own weight on wire ropes before it ever lifted a ship. Nearly seven decades later, that lineage is still carried by his family and the engineers they trained. You are not buying "a shiplift." You are buying the original, from the descendants and team of the man who created it.</div>
+        <div class="kicker-text"><strong>1957 — the year the shiplift was invented.</strong> Raymond Pearlson designed, patented, and built the world's first shiplift that year — a 100-ton system that is still operating today. More than 280 Pearlson shiplifts now serve in over 70 countries, backed by nearly seven decades of accumulated engineering. That lineage is still carried by his family and the engineers they trained. You are not buying "a shiplift." You are buying the original, from the descendants and team of the man who created it.</div>
       </div>
 
-      <p style="max-width:640px; margin:0 auto 32px; text-align:center; color:#a5adbb; font-size:0.78rem;">Installation base and country coverage as published by <a href="https://shiplift.com" target="_blank" rel="noopener" style="color:#7c8798; text-decoration:underline;">Pearlson Shiplift Corporation</a>.</p>
+      <p class="why-note">Installation base and country coverage as published by <a href="https://shiplift.com" target="_blank" rel="noopener">Pearlson Shiplift Corporation</a>.</p>
+
+      <div class="inventor-profile">
+        <img src="optimized/raymond-pearlson.png" alt="Raymond Pearlson — Inventor of the Modern Shiplift System" loading="lazy">
+        <div>
+          <div class="inventor-name">Raymond Pearlson</div>
+          <div class="inventor-title">Inventor of the Modern Synchronous Vertical Shiplift</div>
+          <p>A Naval Architect and Marine Engineer, Raymond Pearlson conceived the modern shiplift in the 1950s, built the first working system in 1957, and founded Pearlson Engineering Company in 1958 to develop it worldwide. For the next 20 years he introduced the invention to shipyards across the globe. In 2002 he received the <strong>Elmer A. Sperry Award</strong>, presented jointly by ASME, IEEE, IME and SNAME, for a distinguished engineering contribution that advanced the art of transportation.</p>
+        </div>
+      </div>
 
       <div class="services-grid why-grid">
         <div class="service-card">
-          <div class="icon">🏛️</div>
+          <div class="icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg></div>
           <h3>The Inventor's Legacy</h3>
-          <p>Founded in 1957 by Raymond Pearlson, the family name has stayed with this one technology ever since. Today's team is led by the founder's family and engineers raised on the original drawings — nearly seven decades of accumulated knowledge passing directly through the company, not diluted across a conglomerate. Every answer you receive carries that lineage.</p>
+          <p>Founded in 1958 by Raymond Pearlson, the company has devoted itself to this one technology ever since. Today's team works from the original 1957 drawings — knowledge passed directly through the company, not diluted across a conglomerate.</p>
         </div>
         <div class="service-card">
-          <div class="icon">🌍</div>
+          <div class="icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.5 3.8 5.7 3.8 9S14.5 18.5 12 21c-2.5-2.5-3.8-5.7-3.8-9S9.5 5.5 12 3z"/></svg></div>
           <h3>Building the Largest Shiplifts on Earth</h3>
-          <p>Pearlson is behind all four of the world's largest shiplifts — a 25,000-ton system for BAE Systems in Jacksonville, an 18,000-ton system for Austal USA, and Australia's Southern-Hemisphere record for ASC — more tonnage per platform than any competitor has ever delivered.</p>
+          <p>Pearlson built three of the world's largest shiplifts — including the largest in the Americas, a 25,000-ton system for BAE Systems in Jacksonville, plus an 18,000-ton system for Austal USA and Australia's Southern-Hemisphere record for ASC.</p>
         </div>
         <div class="service-card">
-          <div class="icon">✅</div>
+          <div class="icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
           <h3>Proven by the Toughest Clients</h3>
-          <p>280+ installations across 70+ countries. BAE Systems, Austal USA, the US Navy and coast guards worldwide, MB92 mega-yacht refits, and the Korean Coast Guard all run on Pearlson. References are published and auditable — US-built to Lloyd's Register certified quality, with genuine OEM parts supported for life.</p>
+          <p>BAE Systems, Austal USA, the US Navy and coast guards worldwide, MB92 mega-yacht refits, and the Korean Coast Guard all run on Pearlson. References are published and auditable — built in the USA to Lloyd's Register&ndash;certified design and quality systems, with genuine OEM spare parts supported for the life of the system.</p>
         </div>
         </div>
 
       <div class="why-verdict">
         <h3>Why Pearlson — in one sentence</h3>
-        <p style="color:rgba(255,255,255,0.85); margin-bottom:8px;">The company that invented the shiplift in 1957 has since installed more than 280 systems in over 70 countries — including all four of the largest ever built — and answers every one of them with nearly seven decades of accumulated engineering behind it.</p>
+        <p style="color:rgba(255,255,255,0.85); margin-bottom:8px;">The company that invented the shiplift in 1957 has since built three of the world's largest — including the largest in the Americas — and answers every installation with accumulated engineering unmatched in this field.</p>
         <ul>
-          <li>The only company on earth devoted 100% to shiplift and transfer systems &mdash; not a product line, the entire business</li>
-          <li>All four of the world's largest shiplifts &mdash; 25,000-ton, 18,000-ton, and the Southern-Hemisphere record &mdash; are Pearlson builds</li>
+          <li>Pearlson is the only company on earth devoted 100% to shiplift and transfer systems &mdash; not a product line, the entire business</li>
+          <li>Three of the world's largest shiplifts &mdash; 25,000-ton, 18,000-ton, and the Southern-Hemisphere record &mdash; are Pearlson builds</li>
           <li>280+ installations in 70+ countries, with references you can audit</li>
-          <li>Official Pearlson agent in Egypt &mdash; local engineering support through Global ShipYard Solution</li>
+          <li>And in Egypt, all of it is delivered locally by GSY &mdash; Pearlson's official agent</li>
         </ul>
-        <button class="btn btn-primary" onclick="document.getElementById('subject').value='Feasibility inquiry - my yard and fleet'; goTo('contact')" style="color:#fff;">Talk to an Engineer — Not a Sales Team</button>
-        <button class="btn btn-outline" onclick="goTo('contact')" style="margin-left:8px;">Request References</button>
-        <a class="btn btn-outline" href="https://wa.me/201111888861" target="_blank" rel="noopener" style="margin-left:8px; text-decoration:none;">WhatsApp an Engineer</a>
-        <p style="color:rgba(255,255,255,0.75); margin-top:16px; font-size:0.9rem;">The complete case — six advantages, the by-the-numbers record and the full drydocking comparison — is on the <a href="why-pearlson.html" style="color:#f39c12; text-decoration:none;">Why Pearlson page</a>.</p>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:28px;">
+          <button class="btn btn-primary" onclick="document.getElementById('subject').value='Feasibility inquiry - my yard and fleet'; goTo('contact')" style="color:#fff;">Talk to a GSY Engineer</button>
+          <button class="btn btn-outline" onclick="document.getElementById('subject').value='Request client references'; goTo('contact')">Get References Through GSY</button>
+          <a class="btn btn-outline" href="https://wa.me/201111888861" target="_blank" rel="noopener" style="text-decoration:none;">WhatsApp an Engineer</a>
+        </div>
+        <p style="color:rgba(255,255,255,0.75); margin-top:16px; font-size:0.9rem;">Feasibility review for your yard &mdash; handled by GSY's engineers in Egypt: local procurement, coordination and commissioning, on Pearlson's behalf. We respond within one business day.</p>
+        <p style="color:rgba(255,255,255,0.75); margin-top:8px; font-size:0.9rem;">The complete case — six advantages, the by-the-numbers record and the full drydocking comparison — is on the <a href="why-pearlson.html" style="color:#f39c12; text-decoration:none;">Why Pearlson page</a>.</p>
       </div>
 
       <div class="evidence-library" id="evidence-library">
