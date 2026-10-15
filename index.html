@@ -331,7 +331,6 @@
 
     /* Why Pearlson */
     #why-pearlson { background: #fff; }
-    .why-lead { max-width: 720px; }
     .why-kicker {
       display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: start;
       margin-top: 48px;
@@ -352,23 +351,6 @@
     .inventor-profile .inventor-name { font-size: 1.3rem; font-weight: 700; color: #0a3d62; margin-bottom: 4px; }
     .inventor-profile .inventor-title { color: #b45309; font-size: 0.9rem; font-weight: 600; margin-bottom: 12px; }
     .inventor-profile p { font-size: 0.95rem; color: #555; line-height: 1.7; margin: 0; }
-    .why-stats {
-      background: linear-gradient(135deg, #0a3d62 0%, #0d4f7a 100%);
-      border-radius: 18px; padding: 48px 32px; margin-top: 56px;
-    }
-    .why-stats .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 24px; }
-    .why-compare { margin-top: 64px; }
-    .compare-wrap { overflow-x: auto; margin-top: 24px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
-    .compare-table {
-      width: 100%; border-collapse: collapse; background: #fff; min-width: 720px;
-      font-size: 0.88rem;
-    }
-    .compare-table th, .compare-table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid #eef0f5; vertical-align: top; }
-    .compare-table th { background: #0a3d62; color: #fff; font-weight: 600; font-size: 0.85rem; }
-    .compare-table td:first-child { font-weight: 700; color: #0a3d62; white-space: nowrap; }
-    .compare-table tr:last-child td { border-bottom: none; }
-    .compare-table td .yes { color: #1a8a5c; font-weight: 700; }
-    .compare-table td .no { color: #c0392b; font-weight: 700; }
     .why-note { font-size: 0.78rem; color: #6b7280; margin-top: 12px; font-style: italic; }
     .why-note a { color: #4b5563; }
     .evidence-library { margin-top: 72px; text-align: center; }
@@ -397,14 +379,20 @@
       border-bottom: 1px solid rgba(255,255,255,0.1);
     }
     .why-verdict ul li::before { content: '✓'; position: absolute; left: 0; top: 10px; color: #f39c12; font-weight: 700; }
-    .why-verdict .btn { margin-top: 28px; }
+    .why-verdict .cred-badges {
+      display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px;
+    }
+    .why-verdict .cred-badges span {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+      color: rgba(255,255,255,0.85); border: 1px solid rgba(255,255,255,0.28);
+      border-radius: 999px; padding: 6px 12px;
+    }
     @media (max-width: 768px) {
       .why-kicker { grid-template-columns: 1fr; gap: 12px; }
       .why-kicker .kicker-num { font-size: 3rem; }
       .inventor-profile { grid-template-columns: 1fr; text-align: center; padding: 24px 20px; }
       .inventor-profile img { margin: 0 auto; }
       .inventor-profile p { text-align: left; }
-      .why-stats { padding: 32px 24px; }
       .why-verdict { padding: 28px 24px; }
       .why-verdict ul { columns: 1; }
       .guide-cards { grid-template-columns: 1fr; }
@@ -988,7 +976,7 @@
         </div>
       </div>
 
-      <div class="services-grid why-grid">
+      <div class="services-grid">
         <div class="service-card">
           <div class="icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg></div>
           <h3>The Inventor's Legacy</h3>
@@ -1002,9 +990,9 @@
         <div class="service-card">
           <div class="icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
           <h3>Proven by the Toughest Clients</h3>
-          <p>BAE Systems, Austal USA, the US Navy and coast guards worldwide, MB92 mega-yacht refits, and the Korean Coast Guard all run on Pearlson. References are published and auditable — built in the USA to Lloyd's Register&ndash;certified design and quality systems, with genuine OEM spare parts supported for the life of the system.</p>
+          <p>BAE Systems, Austal USA, the US Navy and coast guards worldwide, MB92 mega-yacht refits, and the Korean Coast Guard all run on Pearlson. References are <a href="#evidence-library" style="color:#0a3d62; text-decoration:underline;">published and auditable &rarr;</a> — built in the USA to Lloyd's Register&ndash;certified design and quality systems, with genuine OEM spare parts supported for the life of the system.</p>
         </div>
-        </div>
+      </div>
 
       <div class="why-verdict">
         <h3>Why Pearlson — in one sentence</h3>
@@ -1019,6 +1007,12 @@
           <button class="btn btn-primary" onclick="document.getElementById('subject').value='Feasibility inquiry - my yard and fleet'; goTo('contact')" style="color:#fff;">Talk to a GSY Engineer</button>
           <button class="btn btn-outline" onclick="document.getElementById('subject').value='Request client references'; goTo('contact')">Get References Through GSY</button>
           <a class="btn btn-outline" href="https://wa.me/201111888861" target="_blank" rel="noopener" style="text-decoration:none;">WhatsApp an Engineer</a>
+        </div>
+        <div class="cred-badges">
+          <span>Lloyd's Register Certified QMS</span>
+          <span>ISO 9001:2015</span>
+          <span>2002 Sperry Award</span>
+          <span>US Navy &amp; BAE References</span>
         </div>
         <p style="color:rgba(255,255,255,0.75); margin-top:16px; font-size:0.9rem;">Feasibility review for your yard &mdash; handled by GSY's engineers in Egypt: local procurement, coordination and commissioning, on Pearlson's behalf. We respond within one business day.</p>
         <p style="color:rgba(255,255,255,0.75); margin-top:8px; font-size:0.9rem;">The complete case — six advantages, the by-the-numbers record and the full drydocking comparison — is on the <a href="why-pearlson.html" style="color:#f39c12; text-decoration:none;">Why Pearlson page</a>.</p>
@@ -1065,7 +1059,7 @@
       <h2 class="section-title">The World's Hardest Lifts, Underway</h2>
       <p class="section-sub">Every reference we publish is named, sized and auditable. We invite full due diligence — and we ask our competitors to publish the same depth.</p>
 
-      <div class="services-grid why-grid">
+      <div class="services-grid">
         <div class="service-card">
 <div class="icon"><img src="optimized/flags/us.png" alt="United States" width="44" height="29" style="width:44px; height:29px; border-radius:4px; box-shadow:0 2px 6px rgba(0,0,0,0.25); display:inline-block;"></div>
           <h3>BAE Systems — Jacksonville, FL</h3>
